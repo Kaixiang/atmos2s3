@@ -4,6 +4,7 @@ require "multi_json"
 require "uri"
 require "base64"
 
+ATOMS_PREFIX = 'rest/objects/'
 
 s3_blob_option = {
   :aws_options => {
@@ -44,7 +45,7 @@ aws_s3 = AWS::S3.new(s3_blob_option[:aws_options])
 blob_yml.each do |k, v|
   blob_file = File.join(blobs_dir, k)
   object_id = decode_object_id(v['object_id'])
-  oid = object_id["oid"]
+  oid = ATOMS_PREFIX + object_id["oid"]
   puts "uploading #{blob_file} as #{oid}.."
   s3_object = aws_s3.buckets[s3_blob_option[:bucket]].objects[oid]
   upload_to_s3(s3_object, blob_file)
