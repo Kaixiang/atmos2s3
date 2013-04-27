@@ -13,4 +13,6 @@ export BLOB_S3_BUCKET= <S3 bucket you want to hold the key>
 
 #### source ./env.sh
 
+#### bundle install
+
 #### ruby ./copy2s3.rb

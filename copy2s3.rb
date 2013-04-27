@@ -1,8 +1,4 @@
 require "aws"
-require "yaml"
-require "multi_json"
-require "uri"
-require "base64"
 require "atmos"
 require "tempfile"
 
