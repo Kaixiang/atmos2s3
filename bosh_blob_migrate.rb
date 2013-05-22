@@ -1,5 +1,4 @@
 require "aws"
-require "tempfile"
 
 s3_blob_option = {
   :aws_options => {
